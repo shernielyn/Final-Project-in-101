@@ -1,0 +1,322 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+/* --- COLOR PALETTE DEFINITION --- */
+/* Richer colors for a premium, metallic look */
+:root {
+  --color-gold: #FFD700; /* Richer, deeper gold */
+  --color-red: #8B0000; /* Deep, luxurious red (Dark Red) */
+  --color-bg-dark: #0a0a0a; /* True black background */
+  --color-card-dark: #1e1e1e; /* Slightly lighter card background */
+  --color-highlight: #00aaff; /* Subtle blue highlight for accents (like Arc Reactor) */
+}
+
+body {
+  font-family: "Orbitron", sans-serif;
+  background: var(--color-bg-dark);
+  color: #fff;
+  /* Adding subtle box shadow for depth */
+  box-shadow: inset 0 0 50px rgba(0, 0, 0, 0.5);
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--color-red);
+  /* Use a subtle gradient and a strong shadow for depth */
+  background: linear-gradient(to right, #440000, var(--color-red), #440000);
+  padding: 15px 30px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.8);
+}
+/* Use Text Shadow for a glowing/premium logo effect */
+.navbar .logo {
+    color: var(--color-gold);
+    font-size: 1.6rem;
+    text-shadow: 0 0 8px rgba(255, 215, 0, 0.8);
+}
+.navbar ul { list-style: none; display: flex; gap: 25px; }
+.navbar a {
+  text-decoration: none; color: #fff; transition: 0.3s;
+  display: flex; align-items: center;
+}
+/* Gold glow on hover */
+.navbar a:hover { color: var(--color-gold); text-shadow: 0 0 5px rgba(255, 215, 0, 0.5); }
+#cartCount {
+  color: var(--color-gold);
+  font-weight: 700;
+  margin-left: 5px;
+}
+
+/* Sections */
+.section { display: none; padding: 40px 20px; }
+.section.active { display: block; }
+
+/* Hero Section (The Homepage Banner) */
+.hero {
+  text-align: center;
+  padding: 100px 20px;
+  /* Deep, dramatic gradient */
+  background: linear-gradient(to bottom, var(--color-red), var(--color-bg-dark));
+  border-bottom: 2px solid var(--color-gold);
+}
+/* Large, glowing title */
+.hero h2 {
+    color: var(--color-gold);
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+    text-shadow: 0 0 15px rgba(255, 215, 0, 0.7); /* Stronger text glow */
+}
+.hero p { color: #ccc; font-size: 1.1rem; margin-bottom: 30px; }
+.cta-btn {
+  background: var(--color-gold); color: #111;
+  padding: 12px 30px; border: none; border-radius: 8px;
+  cursor: pointer; transition: 0.3s;
+  font-weight: bold;
+}
+/* Button Hover with metallic shine effect */
+.cta-btn:hover {
+    background: var(--color-gold);
+    box-shadow: 0 0 15px rgba(255, 215, 0, 0.7); /* Gold glow on button */
+    transform: scale(1.05);
+}
+
+/* Products */
+.products h2, #shop h2, #cart h2, .info-section h2 {
+  text-align: center;
+  color: var(--color-gold);
+  margin-bottom: 25px;
+  text-shadow: 0 0 5px rgba(255, 215, 0, 0.5);
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 25px;
+}
+
+.product-card {
+  background: var(--color-card-dark);
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 0 10px rgba(0,0,0,0.6); /* Deeper shadow */
+  text-align: center;
+  transition: 0.3s;
+  border: 1px solid #333; /* Subtle border for separation */
+}
+.product-card:hover {
+  transform: translateY(-8px);
+  /* Premium, defined glow on hover */
+  box-shadow: 0 0 25px rgba(255, 215, 0, 0.4), 0 0 5px rgba(255, 215, 0, 0.8);
+}
+.product-card img {
+  width: 100%; height: 260px; object-fit: contain;
+  background: #000; padding: 15px;
+}
+.product-card h3, .product-card p { margin: 8px 0; color: #fff; }
+
+.add-cart {
+  background: var(--color-red); color: #fff; border: none;
+  padding: 10px 15px; margin-bottom: 10px;
+  border-radius: 8px; cursor: pointer; transition: 0.3s;
+}
+.add-cart:hover { background: var(--color-gold); color: #000; }
+.added { background: var(--color-gold) !important; color: #000 !important; }
+
+/* Cart Specific Styles */
+#cartItems {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  padding: 0 10%;
+}
+.cart-item-card {
+  display: flex;
+  text-align: left;
+  padding: 15px;
+  align-items: center;
+  overflow: visible;
+  text-align: left;
+  transform: none !important;
+  box-shadow: 0 0 15px rgba(255, 215, 0, 0.1); /* Subtle yellow glow */
+}
+.cart-item-card img {
+  width: 100px;
+  height: 100px;
+  flex-shrink: 0;
+  margin-right: 20px;
+  padding: 5px;
+}
+.cart-details { flex-grow: 1; }
+.cart-details h3 { margin-top: 0; }
+.subtotal-price { color: var(--color-highlight); font-weight: 700; margin-bottom: 10px; }
+.remove-btn {
+  background: #550000; color: #fff; border: none;
+  padding: 5px 10px; border-radius: 4px; cursor: pointer;
+  transition: 0.2s;
+  margin-left: auto;
+}
+.remove-btn:hover { background: var(--color-red); }
+
+/* Cart Summary (Total Price) */
+.cart-summary {
+  text-align: right;
+  padding: 20px 0;
+  margin-top: 30px;
+  border-top: 2px solid var(--color-red); 
+}
+.cart-summary h3 {
+  color: var(--color-gold);
+  font-size: 1.8rem;
+  margin: 0;
+  padding: 0;
+  text-shadow: 0 0 10px rgba(255, 215, 0, 0.6);
+}
+.empty-cart-message {
+    text-align: center;
+    color: #888;
+    font-style: italic;
+    padding: 50px;
+}
+
+/* Buy Button */
+.buy-btn {
+  display: block;
+  margin: 30px auto;
+  padding: 12px 25px;
+  background: var(--color-gold);
+  color: #000;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.buy-btn:hover { background: #ffaa00; }
+
+/* Popup */
+.popup {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0; top: 0; width: 100%; height: 100%;
+  background: rgba(0,0,0,0.85); /* Slightly darker overlay */
+  justify-content: center; align-items: center;
+}
+.popup-content {
+  background: var(--color-card-dark);
+  border: 3px solid var(--color-red); /* Thicker red border */
+  border-radius: 12px;
+  padding: 25px;
+  text-align: center;
+  color: #fff;
+  width: 350px;
+  position: relative;
+  box-shadow: 0 0 20px rgba(255, 215, 0, 0.4); /* Gold glow on popups */
+}
+.popup-content h2 { color: var(--color-gold); margin-bottom: 20px; }
+.popup-content p { color: #fff; }
+.popup-content input, .popup-content select {
+  width: 100%;
+  margin-bottom: 15px;
+  padding: 10px;
+  border-radius: 6px;
+  border: none;
+  background: #333;
+  color: #fff;
+}
+.confirm-btn {
+  background: var(--color-gold); color: #000;
+  padding: 10px 20px; border: none;
+  border-radius: 8px; cursor: pointer; transition: 0.3s;
+}
+.confirm-btn:hover { background: #ffaa00; }
+.close {
+  position: absolute; top: 10px; right: 15px;
+  color: var(--color-gold); font-size: 20px; cursor: pointer;
+}
+
+/* Notification */
+.cart-notification {
+  display: none;
+  position: fixed; top: 20px; right: 20px;
+  background: var(--color-gold); color: #000;
+  padding: 10px 20px; border-radius: 8px;
+  font-weight: bold; box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+}
+
+/* Footer */
+footer {
+  background: linear-gradient(to top, var(--color-red), var(--color-bg-dark));
+  color: #fff; text-align: center; padding: 20px;
+  margin-top: 30px;
+  border-top: 1px solid var(--color-red);
+}
+
+/* Info Sections (About, Help, Profile) */
+.info-section {
+    max-width: 800px;
+    margin: 0 auto;
+    background: var(--color-card-dark);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+}
+.info-section p, .info-section ul {
+    font-family: sans-serif;
+    line-height: 1.6;
+    margin-bottom: 15px;
+    color: #ccc;
+}
+.info-section h3 {
+    color: var(--color-highlight);
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+.info-section ul {
+    list-style-type: none;
+    padding-left: 20px;
+}
+.info-section ul li {
+    margin-bottom: 8px;
+    padding-left: 10px;
+    border-left: 3px solid var(--color-red);
+}
+.profile-details p {
+    background: #222;
+    padding: 10px;
+    border-radius: 5px;
+    border-left: 5px solid var(--color-gold);
+}
+/* Profile Editing Styles (from previous step) */
+.profile-details label {
+    display: block;
+    font-weight: bold;
+    color: var(--color-gold);
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+.profile-details input {
+    background: #333;
+    color: #fff;
+    border: 1px solid #444;
+    padding: 10px;
+    border-radius: 4px;
+    width: 100%;
+}
+.profile-details input:read-only {
+    background: #1a1a1a;
+    border: 1px solid transparent;
+    cursor: default;
+}
+.profile-details input.editable {
+    background: #222;
+    border: 1px solid var(--color-red);
+}
+.save-btn, .cancel-btn {
+    margin-top: 15px;
+    margin-right: 10px;
+    background: var(--color-highlight);
+}
+.cancel-btn {
+    background: #555;
+}
