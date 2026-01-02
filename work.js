@@ -35,21 +35,21 @@ helpLink.addEventListener("click", () => showSection("help"));   // New Handler
 profileLink.addEventListener("click", () => showSection("profile")); // New Handler
 
 const shopProducts = [
-  { name: "Iron Man Helmet", price: 5000, img: "images/helmet.png" },
-  { name: "Arc Reactor Replica", price: 2500, img: "images/arc.png" },
-  { name: "Iron Man Armor Keychain", price: 300, img: "images/keychain.png" },
-  { name: "Mark 85 Action Figure", price: 4500, img: "images/mark85.jpg" },
-  { name: "Iron Man Hoodie", price: 1200, img: "images/hoodie.png" },
-  { name: "Iron Man Poster", price: 400, img: "images/poster.jpg" },
-  { name: "Iron Man Bust Statue", price: 7000, img: "images/bust.png" },
-  { name: "Tony Stark Glasses", price: 950, img: "images/sunglasses.png" },
-  { name: "Iron Man USB Drive", price: 600, img: "images/usb.png" },
-  { name: "Iron Man Powerbank", price: 1300, img: "images/powerbank.jpg" },
-  { name: "Iron Man Laptop Sleeve", price: 800, img: "images/laptop_sleeve.jpg" },
-  { name: "Iron Man Wallet", price: 650, img: "images/wallet.jpg" },
-  { name: "Iron Man Watch", price: 1800, img: "images/watch.png" },
-  { name: "Iron Man Mousepad", price: 300, img: "images/mousepad.png" },
-  { name: "Iron Man Phone Case", price: 500, img: "images/case.jpg" },
+  { name: "Iron Man Helmet", price: 5000, img: "helmet.png" },
+  { name: "Arc Reactor Replica", price: 2500, img: "arc.png" },
+  { name: "Iron Man Armor Keychain", price: 300, img: "keychain.png" },
+  { name: "Mark 85 Action Figure", price: 4500, img: "mark85.jpg" },
+  { name: "Iron Man Hoodie", price: 1200, img: "hoodie.png" },
+  { name: "Iron Man Poster", price: 400, img: "poster.jpg" },
+  { name: "Iron Man Bust Statue", price: 7000, img: "bust.png" },
+  { name: "Tony Stark Glasses", price: 950, img: "sunglasses.png" },
+  { name: "Iron Man USB Drive", price: 600, img: "usb.png" },
+  { name: "Iron Man Powerbank", price: 1300, img: "powerbank.jpg" },
+  { name: "Iron Man Laptop Sleeve", price: 800, img: "laptop_sleeve.jpg" },
+  { name: "Iron Man Wallet", price: 650, img: "wallet.jpg" },
+  { name: "Iron Man Watch", price: 1800, img: "watch.png" },
+  { name: "Iron Man Mousepad", price: 300, img: "mousepad.png" },
+  { name: "Iron Man Phone Case", price: 500, img: "case.jpg" },
 ];
 
 shopProducts.forEach(item => {
@@ -229,4 +229,5 @@ document.getElementById("checkoutForm").addEventListener("submit", e => {
 // Placeholder functionality for Edit Details button in Profile
 document.querySelector("#profile .cta-btn").addEventListener('click', () => {
     alert("Functionality to edit profile details is under development. Thank you for your patience!");
+
 });
